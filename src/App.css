@@ -1,10 +1,131 @@
-.App {
-  text-align: center;
+.nav-ul li {
+  display: inline-block;
+  padding: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.nav-ul {
+  padding: 5px;
+  margin: 0;
+  background-color: deepskyblue;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  background-color: deepskyblue;
+  color: aliceblue;
+  width: 100%;
+  padding-top: 12px;
+  text-align: center;
+  padding-bottom: 13px;
+}
+
+.signUp,
+.add,
+.update {
+  margin-left: 35%;
+}
+
+.signUpinputBox,
+.productInputBox {
+  display: block;
+  margin: 9px;
+  padding: 9px;
+  width: 300px;
+  /* color: deepskyblue; */
+  border: 1px solid deepskyblue;
+  border-radius: 6px;
+}
+
+.signUpbtn,
+.addproductBtn,
+.updateProductBtn {
+  margin-left: 109px;
+  padding: 9px;
+  width: 120px;
+  border: 1px solid deepskyblue;
+  background-color: deepskyblue;
+  border-radius: 15px;
+  color: white;
+  font-size: large;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 45px 3px 45px 3px pink inset;
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.ourlogo {
+  width: 45px;
+  float: left;
+  border-radius: 50%;
+  margin-top: 6px;
+  margin-left: 12px;
+}
+
+.addProduct,
+.updateProduct {
+  margin-top: 30px;
+}
+
+.errorInput {
+  color: red;
+  margin-left: 10px;
+}
+.display {
+  display: block;
+}
+
+.product-list {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.product-list ul li {
+  display: inline-block;
+  border: 1px solid deepskyblue;
+  padding: 6px;
+  width: 120px;
+}
+.product-list ul {
+  margin: 0;
+}
+.delbtn {
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.product-list ul li a {
+  text-decoration: none;
+  color: deepskyblue;
+  font-size: smaller;
+}
+
+.searchBox {
+  width: 300px;
+  margin-bottom: 24px;
+  height: 30px;
+  padding-left: 24px;
+  border: 1px solid deepskyblue;
+  border-radius: 6px;
+}
+
+.home{
+  text-align: center;
+  margin-top: 153px;
+  -webkit-text-stroke-width: medium;
+  font-size: xx-large;
 }
 
 @media (prefers-reduced-motion: no-preference) {
