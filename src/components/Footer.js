@@ -2,7 +2,7 @@ export const Footer=()=>{
 
     return(
         <div className="footer">
-            E-comm Dashboard
+            Mindful Gurukul
         </div>
     )
 }

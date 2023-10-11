@@ -30,12 +30,13 @@
 .add,
 .update {
   margin-left: 35%;
+  
 }
 
 .signUpinputBox,
 .productInputBox {
   display: block;
-  margin: 9px;
+  margin: 7px;
   padding: 9px;
   width: 300px;
   /* color: deepskyblue; */
@@ -47,14 +48,14 @@
 .addproductBtn,
 .updateProductBtn {
   margin-left: 109px;
-  padding: 9px;
+  padding: 7px;
   width: 120px;
   border: 1px solid deepskyblue;
   background-color: deepskyblue;
   border-radius: 15px;
   color: white;
   font-size: large;
-  margin-top: 15px;
+  margin-top: 5px;
   cursor: pointer;
   box-shadow: 45px 3px 45px 3px pink inset;
 }
@@ -64,7 +65,7 @@
 }
 
 .ourlogo {
-  width: 45px;
+  width: 60px;
   float: left;
   border-radius: 50%;
   margin-top: 6px;
@@ -74,14 +75,6 @@
 .addProduct,
 .updateProduct {
   margin-top: 30px;
-}
-
-.errorInput {
-  color: red;
-  margin-left: 10px;
-}
-.display {
-  display: block;
 }
 
 .product-list {

@@ -13,24 +13,18 @@ export const Nav = () => {
     <>
     <img 
     className="ourlogo"
-    src="https://static.vecteezy.com/system/resources/previews/003/092/544/original/e-commerce-logo-with-pointer-and-shopping-bag-free-vector.jpg"
+    src="logo.png"
     alt="logo"
      />
       {auth ? (
         <ul className="nav-ul">
           <li>
-            <Link to={"/"}>Product</Link>
+            <Link to={"/"}>User</Link>
           </li>
           <li>
-            <Link to={"/add"}>Add Product</Link>
+            <Link to={"/add"}>Add User</Link>
           </li>
-          {/* <li>
-            <Link to={"/update"}>Update Product</Link>
-          </li> */}
-
-          <li>
-            <Link to={"/profile"}>Profile</Link>
-          </li>
+          
           <li>
             <Link onClick={logout} to={"/home"}>
               Logout({JSON.parse(auth).name})
@@ -39,6 +33,9 @@ export const Nav = () => {
         </ul>
       ) : (
         <ul className="nav-ul nav-right">
+          <li>
+            <Link to={"/home"}>Home</Link>
+          </li>
           <li>
             <Link to={"/signup"}>SignUp</Link>
           </li>

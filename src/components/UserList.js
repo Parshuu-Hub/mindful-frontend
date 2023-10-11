@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export const ProductList = () => {
-  const [products, setProducts] = useState([]);
+export const UserList = () => {
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getProducts();
+    getUsers();
   }, []);
 
-  const getProducts = async () => {
-    let result = await fetch("http://localhost:9000/products",{
+  const getUsers = async () => {
+    let result = await fetch("https://mindful-backend.vercel.app/usersList",{
         headers:{
             authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}` 
         }
     });
     result = await result.json();
-    setProducts(result);
+    setUsers(result);
   };
 
   const deleteRecord = async (id) => {
-    let result = await fetch(`http://localhost:9000/product/${id}`, {
+    let result = await fetch(`https://mindful-backend.vercel.app/user/${id}`, {
       method: "delete",
       headers:{
         authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}` 
@@ -27,50 +27,49 @@ export const ProductList = () => {
     });
     result = await result.json();
     if (result) {
-      getProducts();
+      getUsers();
     }
   };
 
   const handleSearch = async (e) => {
     let key = e.target.value;
     if (key) {
-      let result = await fetch(`http://localhost:9000/search/${key}`,{
+      let result = await fetch(`https://mindful-backend.vercel.app/search/${key}`,{
+        method:"GET",
         headers:{
             authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}` 
         }
       });
       result = await result.json();
-      setProducts(result);
+      setUsers(result);
     }else{
-        getProducts();
+      getUsers();
     }
   };
 
   return (
     <div className="product-list">
-      <h1>Product List</h1>
+      <h1>Users List</h1>
       <input
         type="text"
         className="searchBox"
         onChange={handleSearch}
-        placeholder="Search product"
+        placeholder="Search user"
       />
       <ul>
         <li>S. No</li>
         <li>Name</li>
-        <li>Price</li>
-        <li>Category</li>
-        <li>Company</li>
+        <li style={{width:"250px"}}>Email</li>
+        <li>Phone</li>
         <li>Operations</li>
       </ul>
-      {products.length > 0 ? (
-        products.map((item, i) => (
+      {users.length > 0 ? (
+        users.map((item, i) => (
           <ul key={i}>
             <li>{i + 1}</li>
             <li>{item.name}</li>
-            <li>Rs.{item.price}</li>
-            <li>{item.category}</li>
-            <li>{item.company}</li>
+            <li style={{width:"250px"}}>{item.email}</li>
+            <li>{item.phone}</li>
             <li>
               <button className="delbtn" onClick={() => deleteRecord(item._id)}>
                 Delete
@@ -80,7 +79,7 @@ export const ProductList = () => {
           </ul>
         ))
       ) : (
-        <h1>No record Found</h1>
+        <h1>No Data Found</h1>
       )}
     </div>
   );

@@ -16,11 +16,11 @@ export const Login = () => {
   const login = async () => {
     const data = { email, password };
 
-    let result = await fetch("http://localhost:9000/login", {
+    let result = await fetch("https://mindful-backend.vercel.app/login", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Access: "application/json",
+        "Access": "application/json",
       },
       body: JSON.stringify(data),
     });
@@ -29,7 +29,7 @@ export const Login = () => {
     console.log(result);
 
     if (result.auth) {
-      localStorage.setItem("user-signUp-info", JSON.stringify(result.user));
+      localStorage.setItem("user-signUp-info", JSON.stringify(result.admin));
       localStorage.setItem("token", JSON.stringify(result.auth));
       navigate("/");
     }else{

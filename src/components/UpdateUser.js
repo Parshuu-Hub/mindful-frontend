@@ -2,28 +2,27 @@ import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import {useParams,useNavigate} from 'react-router-dom';
 
-export const UpdateProduct = () => {
+export const UpdateUser = () => {
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState(null);
   const params=useParams();
   const navigate=useNavigate();
   
   useEffect(()=>{
-    getProductDetails();
+    getUserDetails();
+  
   },[])
 
 
   const clearInput=()=>{
     setName('');
-    setPrice('');
-    setCategory('');
-    setCompany('');
+    setEmail('');
+    setPhone(null);
   }
 
-  const getProductDetails=async ()=>{
-    let result=await fetch(`http://localhost:9000/product/${params.id}`,{
+  const getUserDetails=async ()=>{
+    let result=await fetch(`https://mindful-backend.vercel.app/user/${params.id}`,{
       headers:{
         authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}` 
     }
@@ -31,15 +30,14 @@ export const UpdateProduct = () => {
     result=await result.json();
     console.log(result);
     setName(result.name);
-    setPrice(result.price);
-    setCategory(result.category);
-    setCompany(result.company);
+    setEmail(result.email);
+    setPhone(result.phone);
   }
 
-  const updateProduct=async ()=>{
-    const data={name,price,category,company};
+  const updateUser=async ()=>{
+    const data={name,email,phone};
 
-    let result=await fetch(`http://localhost:9000/update/${params.id}`,{
+    let result=await fetch(`https://mindful-backend.vercel.app/update/${params.id}`,{
       method:'put',
       body:JSON.stringify(data),
       headers:{
@@ -59,7 +57,7 @@ export const UpdateProduct = () => {
 
   return (
     <div className="update">
-      <h1 style={{ marginLeft: "50px" }}>Update Product</h1>
+      <h1 style={{ marginLeft: "50px" }}>Update User</h1>
       <input
         className="productInputBox updateProduct"
         value={name}
@@ -70,29 +68,21 @@ export const UpdateProduct = () => {
 
       <input
         className="productInputBox updateProduct"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         type="text"
         placeholder="Enter price"
       />
 
       <input
         className="productInputBox updateProduct"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
         type="text"
         placeholder="Enter category"
       />
       
-      <input
-        className="productInputBox updateProduct"
-        value={company}
-        onChange={(e) => setCompany(e.target.value)}
-        type="text"
-        placeholder="Enter company"
-      />
-      
-      <button onClick={updateProduct} className="updateProductBtn" type="button">
+      <button onClick={updateUser} className="updateProductBtn" type="button">
         UPDATE
       </button>
     </div>
