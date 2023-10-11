@@ -117,7 +117,7 @@
 .home{
   text-align: center;
   margin-top: 153px;
-  -webkit-text-stroke-width: medium;
+  -webkit-text-stroke-width:thin;
   font-size:x-large;
 }
 
