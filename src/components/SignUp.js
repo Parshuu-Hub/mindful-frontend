@@ -7,7 +7,7 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState(null);
   const [gender, setGender] = useState("male");
-  const [source, setSource] = useState([]);
+  const [source, setSource] = useState("");
   const [city, setCity] = useState("mumbai");
   const [state, setState] = useState("gujarat");
 
