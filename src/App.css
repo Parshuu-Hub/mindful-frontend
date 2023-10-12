@@ -34,7 +34,7 @@
 }
 
 .signUpinputBox,
-.productInputBox {
+.userInputBox {
   display: block;
   margin: 7px;
   padding: 9px;
@@ -45,8 +45,8 @@
 }
 
 .signUpbtn,
-.addproductBtn,
-.updateProductBtn {
+.addUserBtn,
+.updateUserBtn {
   margin-left: 109px;
   padding: 7px;
   width: 120px;
@@ -72,23 +72,23 @@
   margin-left: 12px;
 }
 
-.addProduct,
-.updateProduct {
+.addUser,
+.updateUser {
   margin-top: 30px;
 }
 
-.product-list {
+.user-list {
   text-align: center;
   margin-top: 30px;
 }
 
-.product-list ul li {
+.user-list ul li {
   display: inline-block;
   border: 1px solid deepskyblue;
   padding: 6px;
   width: 120px;
 }
-.product-list ul {
+.user-list ul {
   margin: 0;
 }
 .delbtn {
@@ -99,7 +99,7 @@
   margin-right: 10px;
 }
 
-.product-list ul li a {
+.user-list ul li a {
   text-decoration: none;
   color: deepskyblue;
   font-size: smaller;

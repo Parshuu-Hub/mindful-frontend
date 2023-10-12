@@ -58,7 +58,7 @@ export const UpdateUser = () => {
     <div className="update">
       <h1 style={{ marginLeft: "50px" }}>Update User</h1>
       <input
-        className="productInputBox updateProduct"
+        className="userInputBox updateUser"
         value={name}
         onChange={(e) => setName(e.target.value)}
         type="text"
@@ -66,7 +66,7 @@ export const UpdateUser = () => {
       />
 
       <input
-        className="productInputBox updateProduct"
+        className="userInputBox updateUser"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="text"
@@ -74,14 +74,14 @@ export const UpdateUser = () => {
       />
 
       <input
-        className="productInputBox updateProduct"
+        className="userInputBox updateUser"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         type="text"
         placeholder="Enter phone"
       />
       
-      <button onClick={updateUser} className="updateProductBtn" type="button">
+      <button onClick={updateUser} className="updateUserBtn" type="button">
         UPDATE
       </button>
     </div>

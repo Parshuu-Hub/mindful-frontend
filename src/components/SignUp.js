@@ -107,7 +107,7 @@ export const SignUp = () => {
         placeholder="Enter phone number"
       />
     
-      <div className="signUpinputBox" id="thegender">
+      <div className="signUpinputBox">
         Gender :{" "}
         <input
           type="radio"

@@ -48,7 +48,7 @@ export const UserList = () => {
   };
 
   return (
-    <div className="product-list">
+    <div className="user-list">
       <h1>Users List</h1>
       <input
         type="text"

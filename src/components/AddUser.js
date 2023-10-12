@@ -49,7 +49,7 @@ export const AddUser = () => {
     <div className="add">
       <h1 style={{ marginLeft: "81px" }}>Add User</h1>
       <input
-        className="productInputBox addProduct"
+        className="userInputBox addUser"
         value={name}
         onChange={(e) => setName(e.target.value)}
         type="text"
@@ -58,7 +58,7 @@ export const AddUser = () => {
       
 
       <input
-        className="productInputBox addProduct"
+        className="userInputBox addUser"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="text"
@@ -67,7 +67,7 @@ export const AddUser = () => {
       
 
       <input
-        className="productInputBox addProduct"
+        className="userInputBox addUser"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         type="text"
@@ -75,7 +75,7 @@ export const AddUser = () => {
       />
       
 
-      <button onClick={addUser} className="addproductBtn" type="button">
+      <button onClick={addUser} className="addUserBtn" type="button">
         ADD
       </button>
     </div>
