@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import {useParams,useNavigate} from 'react-router-dom';
 
 export const UpdateUser = () => {
@@ -71,7 +70,7 @@ export const UpdateUser = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         type="text"
-        placeholder="Enter price"
+        placeholder="Enter email"
       />
 
       <input
@@ -79,7 +78,7 @@ export const UpdateUser = () => {
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
         type="text"
-        placeholder="Enter category"
+        placeholder="Enter phone"
       />
       
       <button onClick={updateUser} className="updateProductBtn" type="button">
