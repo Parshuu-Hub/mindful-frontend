@@ -5,7 +5,7 @@ export const AddUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(null);
-  const [err,setErr]=useState(false);
+  
   const navigate=useNavigate();
 
 
@@ -19,7 +19,8 @@ export const AddUser = () => {
 
     // console.log(!name);
     if(!name || !email || !phone){
-      setErr(true);
+  
+      alert("Please fill all details.");
       return false;
     }
     
@@ -54,7 +55,7 @@ export const AddUser = () => {
         type="text"
         placeholder="Enter name"
       />
-      {err && !name && <span className="errorInput">Enter valid name</span>}
+      
 
       <input
         className="productInputBox addProduct"
@@ -63,7 +64,7 @@ export const AddUser = () => {
         type="text"
         placeholder="Enter email"
       />
-      {err && !email && <span className="errorInput">Enter valid price</span>}
+      
 
       <input
         className="productInputBox addProduct"
@@ -72,7 +73,7 @@ export const AddUser = () => {
         type="text"
         placeholder="Enter phone"
       />
-      {err && !phone && <span className="errorInput">Enter valid category</span>}
+      
 
       <button onClick={addUser} className="addproductBtn" type="button">
         ADD
