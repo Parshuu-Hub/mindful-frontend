@@ -14,6 +14,11 @@ export const Login = () => {
   }, []);
 
   const login = async () => {
+    if(!email || !password){
+  
+      alert("Please provide both the details.");
+      return false;
+    }
     const data = { email, password };
 
     let result = await fetch("https://mindful-backend.vercel.app/login", {
